@@ -1,0 +1,39 @@
+.company {
+  margin-bottom: 71px;
+  &__cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    .company__card {
+      display: grid;
+      width: 310px;
+      height: 360px;
+      grid-template-columns: auto;
+      border: 1px solid #d9d9d9;
+      padding: 40px;
+      gap: 20px;
+      img {
+        margin-bottom: 79px;
+      }
+      &__img {
+        padding: 10px;
+        background: #454545;
+        border-radius: 10px;
+      }
+      &__title {
+        color: #454545;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 26px;
+      }
+      &__text {
+        color: #454545;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20.8px;
+      }
+    }
+  }
+}

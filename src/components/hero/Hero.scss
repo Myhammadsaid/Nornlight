@@ -1,0 +1,26 @@
+.hero {
+  margin-bottom: 97px;
+  &__style {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 50px;
+    background: #f2f2f2;
+    flex-wrap: wrap;
+    &__content {
+      .hero__text {
+        color: #454545;
+        font-size: 64px;
+        font-weight: 700;
+        max-width: 588px;
+        line-height: 87.42px;
+        span {
+          color: #ffffff;
+          padding: 0 15px;
+          background: #454545;
+          border-radius: 100px;
+        }
+      }
+    }
+  }
+}
