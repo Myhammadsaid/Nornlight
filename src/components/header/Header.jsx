@@ -8,11 +8,11 @@ import { FiHeart } from "react-icons/fi";
 import { BiMenuAltRight } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
-import "./Header.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+  let navigate = useNavigate();
   return (
     <div>
       <motion.header
@@ -33,24 +33,24 @@ const Header = () => {
               <Link to={"/shipining-payment"} className="header__top__item">
                 Доставка и оплата
               </Link>
-              <a href="#" className="header__top__item">
+              <Link to={"/return"} className="header__top__item">
                 Возврат
-              </a>
-              <a href="#" className="header__top__item">
+              </Link>
+              <Link to={"/garant"} className="header__top__item">
                 Гарантии
-              </a>
-              <a href="#" className="header__top__item">
+              </Link>
+              <Link to={"/contact"} className="header__top__item">
                 Контакты
-              </a>
-              <a href="#" className="header__top__item">
+              </Link>
+              <Link to={"/all-blog"} className="header__top__item">
                 Блог
-              </a>
+              </Link>
             </div>
             <div className="header__top__items2">
-              <a href="#" className="header__top__item">
+              <a href="#" className="header__top__item phone">
                 8 (800) 890-46-56
               </a>
-              <a href="#" className="header__top__item">
+              <a href="#" className="header__top__item tell">
                 Заказать звонок
               </a>
             </div>
@@ -66,7 +66,11 @@ const Header = () => {
               <img src={logo} alt="header__logo" />
               NORNLIGHT
             </Link>
-            <a href="#" className="header__bottom__katalog display__none">
+            <a
+              onClick={() => navigate("/all-katalog")}
+              href="#"
+              className="header__bottom__katalog display__none"
+            >
               <RiMenu2Fill />
               Каталог
             </a>

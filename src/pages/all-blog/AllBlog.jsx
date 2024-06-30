@@ -7,7 +7,7 @@ const AllBlog = () => {
   }, []);
   return (
     <div>
-      <Blog isMarriade={false} />
+      <Blog isMarriade={false} isMarriadeProduct={true} />
     </div>
   );
 };

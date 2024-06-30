@@ -17,7 +17,7 @@ const Home = () => {
       <Company />
       <Product data={data} isLoading={isLoading} isMarriade={true} />
       <Brand />
-      <Blog isMarriade={true} />
+      <Blog isMarriade={true} isMarriadeProduct={false} />
     </div>
   );
 };

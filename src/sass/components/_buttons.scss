@@ -1,0 +1,54 @@
+button {
+  cursor: pointer;
+}
+
+.header__bottom__btn {
+  border: none;
+  background: none;
+  display: none;
+  svg {
+    font-size: 38px;
+  }
+}
+.home__titles__btn {
+  max-width: 500px;
+  padding: 14px 47px;
+  border-radius: 100px;
+  border: 1px solid #454545;
+  transition: 0.3s ease-in-out;
+  color: #454545;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21.86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  background: #fff;
+  gap: 10px;
+  &:hover {
+    background: #454545;
+    color: #fff;
+    svg {
+      transform: translateX(10px);
+    }
+  }
+  svg {
+    font-size: 28px;
+  }
+}
+.product__content__items__item {
+  padding: 3px 17px;
+  border-radius: 100px;
+  background: #454545;
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  &:hover {
+    color: #fff;
+    background: #2f4da3;
+  }
+  &:active {
+    background: #223c86;
+  }
+}

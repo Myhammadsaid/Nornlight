@@ -1,0 +1,36 @@
+.garant {
+  margin-bottom: 104px;
+  &__style {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    &__title {
+      color: #454545;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 70.4px;
+    }
+    &__content {
+      .garant__text {
+        color: #000000;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 33.6px;
+        margin-bottom: 28px;
+      }
+      .garant__par {
+        color: #000000;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 28px;
+        max-width: 640px;
+        ul {
+          list-style: outside;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Brand from "../../components/brand/Brand";
 import Blog from "../../components/blog/Blog";
-import Company from "../../components/compony/Company";
+import CompanyInfo from "../../components/componyInfo/CompanyInfo";
 
 const AboutCompany = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
-      <Company />
+      <CompanyInfo />
       <Brand />
       <Blog isMarriade={false} />
     </div>

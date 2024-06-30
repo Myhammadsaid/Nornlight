@@ -1,0 +1,32 @@
+.contact {
+  margin-bottom: 92px;
+  &__style {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 53px;
+    flex-wrap: wrap;
+    gap: 30px;
+    &__title {
+      color: #454545;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 70.4px;
+    }
+    .contact__content {
+      &__text {
+        color: #454545;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 32.78px;
+        margin-bottom: 10px;
+      }
+      &__par {
+        color: #454545;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 21.86px;
+      }
+    }
+  }
+}

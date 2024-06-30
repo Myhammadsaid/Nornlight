@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "./context/index.js";
 import { Provider } from "react-redux";
-import "./index.scss";
+import "./sass/main.scss";
 import "./media.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

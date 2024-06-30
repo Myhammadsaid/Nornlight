@@ -1,7 +1,6 @@
 import React from "react";
-import "./Company.scss";
 
-const Company = () => {
+const CompanyInfo = () => {
   return (
     <div>
       <section className="company">
@@ -63,4 +62,4 @@ const Company = () => {
   );
 };
 
-export default Company;
+export default CompanyInfo;

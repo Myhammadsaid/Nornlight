@@ -4,7 +4,6 @@ import { FiHeart } from "react-icons/fi";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Category from "../category/Category";
-import "./Product.scss";
 
 const Product = ({ isMarriade, data, isLoading }) => {
   let navigate = useNavigate();
@@ -55,6 +54,7 @@ const Product = ({ isMarriade, data, isLoading }) => {
           </div>
           {isMarriade ? (
             <button
+              onClick={() => navigate("/all-products")}
               style={{ display: "none" }}
               className="home__titles__btn display__flex width__100 home__btn2"
             >

@@ -4,16 +4,20 @@ import componyImg2 from "../../assets/compony__img2.png";
 import componyImg3 from "../../assets/compony__img3.png";
 import componyImg4 from "../../assets/compony__img4.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import "./Company.scss";
+import { useNavigate } from "react-router-dom";
 
 const Company = () => {
+  let navigate = useNavigate();
   return (
     <div>
       <section className="company">
         <div className="container">
           <div className="home__titles">
             <h2 className="home__titles__title">Почему NORNLIGHT?</h2>
-            <button className="home__titles__btn display__none">
+            <button
+              onClick={() => navigate("/about-company")}
+              className="home__titles__btn display__none"
+            >
               О компании <IoIosArrowRoundForward />
             </button>
           </div>
@@ -54,6 +58,7 @@ const Company = () => {
             </div>
           </div>
           <button
+            onClick={() => navigate("/about-company")}
             style={{ display: "none" }}
             className="home__titles__btn display__flex width__100 home__btn2"
           >

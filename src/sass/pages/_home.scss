@@ -1,0 +1,12 @@
+.home__titles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  &__title {
+    color: #454545;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 54.64px;
+  }
+}

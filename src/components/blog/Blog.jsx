@@ -5,9 +5,8 @@ import blogImg1 from "../../assets/blog__img1.png";
 import blogImg2 from "../../assets/blog__img2.png";
 import blogImg3 from "../../assets/blog__img3.png";
 import { useNavigate } from "react-router-dom";
-import "./Blog.scss";
 
-const Blog = ({ isMarriade }) => {
+const Blog = ({ isMarriade, isMarriadeProduct }) => {
   let navigate = useNavigate();
   return (
     <div>
@@ -72,10 +71,62 @@ const Blog = ({ isMarriade }) => {
                 <hr />
               </div>
             </div>
+            {isMarriadeProduct ? (
+              <>
+                <div className="blog__card">
+                  <img src={blogImg1} alt="blogImg1" />
+                  <div className="blog__card__content">
+                    <div className="blog__card__content__box">
+                      <h2 className="blog__card__content__box__text">
+                        Как правильно освещать дом снаружи?
+                      </h2>
+                      <span>
+                        <MdArrowOutward />
+                      </span>
+                    </div>
+                    <p className="blog__card__content__par">01.01.2024</p>
+                    <hr />
+                  </div>
+                </div>
+                <div className="blog__card">
+                  <img src={blogImg2} alt="blogImg1" />
+                  <div className="blog__card__content">
+                    <div className="blog__card__content__box">
+                      <h2 className="blog__card__content__box__text">
+                        Как правильно освещать дом снаружи?
+                      </h2>
+                      <span>
+                        <MdArrowOutward />
+                      </span>
+                    </div>
+                    <p className="blog__card__content__par">01.01.2024</p>
+                    <hr />
+                  </div>
+                </div>
+                <div className="blog__card">
+                  <img src={blogImg3} alt="blogImg1" />
+                  <div className="blog__card__content">
+                    <div className="blog__card__content__box">
+                      <h2 className="blog__card__content__box__text">
+                        Как правильно освещать дом снаружи?
+                      </h2>
+                      <span>
+                        <MdArrowOutward />
+                      </span>
+                    </div>
+                    <p className="blog__card__content__par">01.01.2024</p>
+                    <hr />
+                  </div>
+                </div>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
           {isMarriade ? (
             <>
               <button
+                onClick={() => navigate("/all-blog")}
                 style={{ display: "none" }}
                 className="home__titles__btn display__flex width__100 home__btn2"
               >

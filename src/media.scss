@@ -44,9 +44,13 @@
         grid-template-columns: auto;
         gap: 0 !important;
         .header__top__item {
+          width: 100% !important;
           text-align: center;
           padding: 15px 0;
           border-bottom: 1px solid #454545;
+          &:first-child {
+            border-top: 1px solid #454545;
+          }
         }
       }
     }
@@ -106,6 +110,16 @@
       max-width: 100% !important;
     }
   }
+  .brand__card {
+    img {
+      width: 100% !important;
+    }
+  }
+  .phone,
+  .tell {
+    color: #000 !important;
+    border: none !important;
+  }
 }
 
 @media (max-width: 950px) {
@@ -123,6 +137,10 @@
   .company__content1__title {
     font-size: 48px !important;
   }
+  .shipining__style__title,
+  .return__style__title {
+    max-width: none !important;
+  }
 }
 
 @media (max-width: 700px) {
@@ -136,6 +154,40 @@
   }
   .home__titles__btn {
     max-width: 350px !important;
+  }
+  .shipining__style__title,
+  .return__style__title,
+  .garant__style__title,
+  .contact__style__title {
+    font-size: 34px !important;
+  }
+  .company__content1__title {
+    font-size: 38px !important;
+  }
+  .return__text,
+  .shipining__content__box__text,
+  .garant__text,
+  .contact__text {
+    font-size: 20px !important;
+  }
+  .shipining__content__box__par,
+  .company__style__par,
+  .garant__par,
+  .contact__par {
+    font-size: 16px !important;
+  }
+  span {
+    .return__par {
+      font-size: 16px !important;
+    }
+    ul {
+      li {
+        font-size: 16px !important;
+      }
+    }
+  }
+  iframe {
+    height: 242px !important;
   }
 }
 
@@ -172,45 +224,5 @@
   }
   .company__content1__card {
     width: 370px !important;
-  }
-}
-
-.home__titles {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
-  &__title {
-    color: #454545;
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 54.64px;
-  }
-  &__btn {
-    max-width: 500px;
-    padding: 14px 47px;
-    border-radius: 100px;
-    border: 1px solid #454545;
-    transition: 0.3s ease-in-out;
-    color: #454545;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 21.86px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    background: #fff;
-    gap: 10px;
-    &:hover {
-      background: #454545;
-      color: #fff;
-      svg {
-        transform: translateX(10px);
-      }
-    }
-    svg {
-      font-size: 28px;
-    }
   }
 }

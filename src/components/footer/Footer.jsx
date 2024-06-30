@@ -2,7 +2,6 @@ import React from "react";
 import footerIcon from "../../assets/header__logo.png";
 import footerPreview from "../../assets/footer__img.png";
 import footerLogo from "../../assets/footer__logo.png";
-import "./Footer.scss";
 
 const Footer = () => {
   return (

@@ -8,16 +8,20 @@ import katalogImg5 from "../../assets/katalog__img5.png";
 import katalogImg6 from "../../assets/katalog__img6.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "./Katalog.scss";
+import { useNavigate } from "react-router-dom";
 
 const Katalog = () => {
+  let navigate = useNavigate();
   return (
     <div>
       <section className="katalog">
         <div className="container">
           <div className="home__titles">
             <h1 className="home__titles__title">Каталог</h1>
-            <button className="home__titles__btn display__none">
+            <button
+              onClick={() => navigate("/catalog")}
+              className="home__titles__btn display__none"
+            >
               Весь каталог <IoIosArrowRoundForward />
             </button>
           </div>
@@ -143,6 +147,7 @@ const Katalog = () => {
             </SwiperSlide>
           </Swiper>
           <button
+            onClick={() => navigate("/catalog")}
             style={{ display: "none" }}
             className="home__titles__btn display__flex width__100 home__btn2"
           >

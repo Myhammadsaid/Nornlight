@@ -1,0 +1,39 @@
+.shipining {
+  margin-bottom: 116px;
+  &__style {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 116px;
+    flex-wrap: wrap;
+    gap: 32px;
+    &__title {
+      color: #454545;
+      max-width: 319px;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 70.4px;
+    }
+    .shipining__content {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 60px;
+      &__box {
+        max-width: 640px;
+        &__text {
+          color: #000000;
+          margin-bottom: 28px;
+          font-size: 24px;
+          font-weight: 600;
+          line-height: 33.6px;
+        }
+        &__par {
+          color: #000000;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 28px;
+        }
+      }
+    }
+  }
+}
