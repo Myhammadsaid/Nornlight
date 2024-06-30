@@ -23,7 +23,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin: 20px auto;
   background: #fff;
   gap: 10px;
   &:hover {
@@ -50,5 +50,66 @@ button {
   }
   &:active {
     background: #223c86;
+  }
+}
+
+.single__content__box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  .single__content__btns {
+    display: flex;
+    align-items: center;
+    &__btn {
+      padding: 16px;
+      background: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 19.68px;
+
+      &:first-child {
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top: 1px solid #e5e5e5;
+        border-left: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        border-right: none;
+      }
+      &:nth-child(2) {
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        border-right: none;
+        border-left: none;
+      }
+      &:last-child {
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-top: 1px solid #e5e5e5;
+        border-right: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        border-left: none;
+      }
+    }
+    &__cart {
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 19.68px;
+      padding: 16px 50px;
+      background: #454545;
+      border-radius: 10px;
+      border: none;
+    }
+    &__heart {
+      width: 52px;
+      height: 52px;
+      font-size: 28px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      background: #f8f8f8;
+    }
   }
 }

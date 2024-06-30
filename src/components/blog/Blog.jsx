@@ -128,7 +128,7 @@ const Blog = ({ isMarriade, isMarriadeProduct }) => {
               <button
                 onClick={() => navigate("/all-blog")}
                 style={{ display: "none" }}
-                className="home__titles__btn display__flex width__100 home__btn2"
+                className="home__titles__btn display__flex home__btn2"
               >
                 Перейти в блог <IoIosArrowRoundForward />
               </button>

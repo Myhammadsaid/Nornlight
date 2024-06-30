@@ -2,7 +2,7 @@ import React from "react";
 import { BsCart } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Category from "../category/Category";
 
 const Product = ({ isMarriade, data, isLoading }) => {
@@ -12,15 +12,17 @@ const Product = ({ isMarriade, data, isLoading }) => {
     <div key={el.id} className="product__card">
       <img src={el.url} alt="productImg" />
       <div className="product__content">
-        <h3 className="product__content__text" title={el.title}>
-          {el.title}
-        </h3>
+        <Link to={`/products/${el.id}`}>
+          <h3 className="product__content__text" title={el.title}>
+            {el.title}
+          </h3>
+        </Link>
         <div className="product__content__items">
           <ul>
             <li>
-              <s>${el.price * 2}</s>
+              <s>{el.price * 2}$</s>
             </li>
-            <li>${el.price}</li>
+            <li>{el.price}$</li>
           </ul>
           <button className="product__content__items__item">
             <BsCart />
@@ -56,7 +58,7 @@ const Product = ({ isMarriade, data, isLoading }) => {
             <button
               onClick={() => navigate("/all-products")}
               style={{ display: "none" }}
-              className="home__titles__btn display__flex width__100 home__btn2"
+              className="home__titles__btn display__flex home__btn2"
             >
               Весь товары <IoIosArrowRoundForward />
             </button>

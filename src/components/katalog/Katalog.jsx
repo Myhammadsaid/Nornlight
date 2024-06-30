@@ -19,7 +19,7 @@ const Katalog = () => {
           <div className="home__titles">
             <h1 className="home__titles__title">Каталог</h1>
             <button
-              onClick={() => navigate("/catalog")}
+              onClick={() => navigate("/all-katalog")}
               className="home__titles__btn display__none"
             >
               Весь каталог <IoIosArrowRoundForward />
@@ -147,9 +147,9 @@ const Katalog = () => {
             </SwiperSlide>
           </Swiper>
           <button
-            onClick={() => navigate("/catalog")}
+            onClick={() => navigate("/all-katalog")}
             style={{ display: "none" }}
-            className="home__titles__btn display__flex width__100 home__btn2"
+            className="home__titles__btn display__flex home__btn2"
           >
             Весь каталог <IoIosArrowRoundForward />
           </button>

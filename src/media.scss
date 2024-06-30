@@ -141,6 +141,14 @@
   .return__style__title {
     max-width: none !important;
   }
+  .single__info {
+    td {
+      &:last-child {
+        font-size: 14px !important;
+        line-height: normal !important;
+      }
+    }
+  }
 }
 
 @media (max-width: 700px) {
@@ -189,6 +197,20 @@
   iframe {
     height: 242px !important;
   }
+  .single__info {
+    &__title {
+      font-size: 30px !important;
+    }
+    tr {
+      gap: 30px !important;
+      td {
+        padding: 10px !important;
+      }
+    }
+  }
+  .single__content__text {
+    font-size: 30px !important;
+  }
 }
 
 @media (max-width: 510px) {
@@ -224,5 +246,21 @@
   }
   .company__content1__card {
     width: 370px !important;
+  }
+  .single__info {
+    td {
+      &:first-child {
+        font-size: 14px !important;
+      }
+      &:last-child {
+        font-size: 12px !important;
+      }
+    }
+  }
+  .single__content__text {
+    font-size: 26px !important;
+  }
+  .single__style__img {
+    max-width: 380px !important;
   }
 }

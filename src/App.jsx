@@ -11,6 +11,7 @@ import Return from "./pages/return/Return";
 import Garant from "./pages/garant/Garant";
 import Contact from "./pages/contact/Contact";
 import AllKatalog from "./pages/all-katalog/AllKatalog";
+import SingleRoute from "./pages/single-route/SingleRoute";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/about-company" element={<AboutCompany />} />
         <Route path="/shipining-payment" element={<ShipiningPayment />} />
         <Route path="/all-katalog" element={<AllKatalog />} />
+        <Route path="/products/:id" element={<SingleRoute />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/garant" element={<Garant />} />
         <Route path="/all-blog" element={<AllBlog />} />
