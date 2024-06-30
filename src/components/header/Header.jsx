@@ -9,9 +9,11 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
+import PhoneModel from "../phone-model/PhoneModel";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+  const [phonetoggle, setPhonetoggle] = useState(false);
   let navigate = useNavigate();
   return (
     <div>
@@ -50,7 +52,11 @@ const Header = () => {
               <a href="#" className="header__top__item phone">
                 8 (800) 890-46-56
               </a>
-              <a href="#" className="header__top__item tell">
+              <a
+                onClick={() => setPhonetoggle(!phonetoggle)}
+                href="#"
+                className="header__top__item tell"
+              >
                 Заказать звонок
               </a>
             </div>
@@ -112,6 +118,7 @@ const Header = () => {
           </form>
         </div>
       </motion.header>
+      {phonetoggle ? <PhoneModel setPhonetoggle={setPhonetoggle} /> : <></>}
     </div>
   );
 };

@@ -6,6 +6,7 @@ import Company from "../../components/company/Company";
 import Product from "../../components/product/Product";
 import Brand from "../../components/brand/Brand";
 import Blog from "../../components/blog/Blog";
+import PhoneModel from "../../components/phone-model/PhoneModel";
 
 const Home = () => {
   let { data, isLoading } = useGetProductsQuery({ page: 1, limit: 8 });
