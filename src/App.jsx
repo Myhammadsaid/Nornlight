@@ -14,6 +14,8 @@ import AllKatalog from "./pages/all-katalog/AllKatalog";
 import SingleRoute from "./pages/single-route/SingleRoute";
 import Login from "./pages/login/Login";
 import Admin from "./pages/admin/Admin";
+import Cart from "./pages/cart/Cart";
+import Wishlist from "./pages/wishlist/Wishlist";
 
 function App() {
   let location = useLocation();
@@ -31,6 +33,8 @@ function App() {
         <Route path="/products/:id" element={<SingleRoute />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/garant" element={<Garant />} />
         <Route path="/all-blog" element={<AllBlog />} />
         <Route path="/return" element={<Return />} />

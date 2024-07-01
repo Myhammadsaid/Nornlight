@@ -12,9 +12,13 @@
       .product__heart {
         cursor: pointer;
         position: absolute;
-        font-size: 24px;
+        background: none;
+        border: none;
         right: 40px;
         top: 2px;
+        svg {
+          font-size: 24px;
+        }
       }
       img {
         width: 240px;

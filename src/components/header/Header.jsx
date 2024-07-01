@@ -10,11 +10,15 @@ import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import PhoneModel from "../phone-model/PhoneModel";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [phonetoggle, setPhonetoggle] = useState(false);
+  const carts = useSelector((state) => state.cart.value.length);
+  const heart = useSelector((state) => state.wishlist.value.length);
   let navigate = useNavigate();
+
   return (
     <div>
       <motion.header
@@ -113,23 +117,32 @@ const Header = () => {
               <IoSearchOutline />
             </form>
             <div className="header__bottom__items">
-              <a href="#" className="header__bottom__items__item">
+              <Link
+                onClick={() => setToggle(false)}
+                to={"/wishlist"}
+                className="header__bottom__items__item"
+              >
                 <FiHeart />
                 <span className="display__none">Избранное</span>
-                <div className="header__bottom__count">0</div>
-              </a>
+                <div className="header__bottom__count">{heart}</div>
+              </Link>
               <Link
+                onClick={() => setToggle(false)}
                 to={"/comparisons"}
                 className="header__bottom__items__item display__none"
               >
                 <FaSignal />
                 <span className="display__none">Сравнение</span>
               </Link>
-              <a href="#" className="header__bottom__items__item">
+              <Link
+                onClick={() => setToggle(false)}
+                to={"/cart"}
+                className="header__bottom__items__item"
+              >
                 <BsCart />
                 <span className="display__none">Корзина</span>
-                <div className="header__bottom__count">0</div>
-              </a>
+                <div className="header__bottom__count">{carts}</div>
+              </Link>
             </div>
           </div>
           <form

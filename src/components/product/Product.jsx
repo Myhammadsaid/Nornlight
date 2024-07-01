@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { BsCart } from "react-icons/bs";
+import { BsCart, BsCartCheck } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import Category from "../category/Category";
 import ImgModel from "../img-model/ImgModel";
 import Skeleton from "../skeleton/Skeleton";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../context/slices/cartSlice";
+import { toggleHeart } from "../../context/slices/wishlistSlice";
+import { TbHeartCheck } from "react-icons/tb";
 
 const Product = ({ isMarriade, data, isLoading }) => {
+  const wishlist = useSelector((state) => state?.wishlist?.value);
+  const carts = useSelector((state) => state.cart.value);
   const [toggle, setToggle] = useState(false);
+  const dispatch = useDispatch();
   let navigate = useNavigate();
 
   let productItems = data?.map((el) => (
@@ -27,16 +34,32 @@ const Product = ({ isMarriade, data, isLoading }) => {
         <div className="product__content__items">
           <ul>
             <li>
-              <s>{el.price * 2}$</s>
+              <s>${el.price * 2}</s>
             </li>
-            <li>{el.price}$</li>
+            <li>${el.price}</li>
           </ul>
-          <button className="product__content__items__item">
-            <BsCart />
+          <button
+            onClick={() => dispatch(addToCart(el))}
+            className="product__content__items__item"
+          >
+            {carts?.some((item) => item.id === el.id) ? (
+              <BsCartCheck />
+            ) : (
+              <BsCart />
+            )}
           </button>
         </div>
       </div>
-      <FiHeart className="product__heart" />
+      <button
+        className="product__heart"
+        onClick={() => dispatch(toggleHeart(el))}
+      >
+        {wishlist?.some((item) => item.id === el.id) ? (
+          <TbHeartCheck />
+        ) : (
+          <FiHeart />
+        )}
+      </button>
     </div>
   ));
 
