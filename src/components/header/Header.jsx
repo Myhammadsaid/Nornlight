@@ -94,10 +94,13 @@ const Header = () => {
                 <span className="display__none">Избранное</span>
                 <div className="header__bottom__count">0</div>
               </a>
-              <a href="#" className="header__bottom__items__item display__none">
+              <Link
+                to={"/comparisons"}
+                className="header__bottom__items__item display__none"
+              >
                 <FaSignal />
                 <span className="display__none">Сравнение</span>
-              </a>
+              </Link>
               <a href="#" className="header__bottom__items__item">
                 <BsCart />
                 <span className="display__none">Корзина</span>

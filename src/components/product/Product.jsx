@@ -5,6 +5,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import Category from "../category/Category";
 import ImgModel from "../img-model/ImgModel";
+import Skeleton from "../skeleton/Skeleton";
 
 const Product = ({ isMarriade, data, isLoading }) => {
   const [toggle, setToggle] = useState(false);
@@ -58,7 +59,7 @@ const Product = ({ isMarriade, data, isLoading }) => {
           </div>
           {isMarriade ? <Category /> : <></>}
           <div className="product__cards">
-            {isLoading ? <h2>Loading...</h2> : productItems}
+            {isLoading ? <Skeleton /> : productItems}
           </div>
           {isMarriade ? (
             <button

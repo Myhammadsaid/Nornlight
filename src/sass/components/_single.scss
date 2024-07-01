@@ -7,7 +7,8 @@
     flex-wrap: wrap;
     gap: 56px;
     &__img {
-      max-width: 600px !important;
+      width: 600px !important;
+      height: 600px;
     }
     .single__content {
       max-width: 595px;
