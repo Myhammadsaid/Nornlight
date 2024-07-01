@@ -1,18 +1,28 @@
-import React from "react";
-import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
+import React, { useRef } from "react";
 import brandImg1 from "../../assets/brendImg1.png";
 import brandImg2 from "../../assets/brendImg2.png";
 import brandImg3 from "../../assets/brendImg3.png";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import "swiper/css";
+import { IoIosArrowRoundForward, IoIosArrowRoundBack } from "react-icons/io";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
 
 const Brand = () => {
+  const swiperRef = useRef(null);
+
+  const handleNextButtonClick = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
+  const handlePrevButtonClick = () => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slidePrev();
+    }
+  };
+
   return (
     <div>
       <section className="brand">
@@ -21,8 +31,23 @@ const Brand = () => {
             <h1 className="home__titles__title brand__title">
               Только проверенные бренды
             </h1>
+            <div className="brand__btns">
+              <button
+                className="brand__btns__btn"
+                onClick={handlePrevButtonClick}
+              >
+                <IoIosArrowRoundBack />
+              </button>
+              <button
+                className="brand__btns__btn"
+                onClick={handleNextButtonClick}
+              >
+                <IoIosArrowRoundForward />
+              </button>
+            </div>
           </div>
           <Swiper
+            ref={swiperRef}
             slidesPerView={1}
             spaceBetween={10}
             breakpoints={{
@@ -39,16 +64,10 @@ const Brand = () => {
                 spaceBetween: 50,
               },
             }}
-            loop={true}
-            // pagination={true}
-            navigation={true}
             autoplay={{
               delay: 2000,
-              disableOnInteraction: false,
             }}
-            modules={[Pagination, Autoplay, Navigation]}
-            className="mySwiper "
-            // className="brand__brands"
+            className="mySwiper"
           >
             <SwiperSlide>
               <div className="brand__card">
@@ -57,17 +76,27 @@ const Brand = () => {
             </SwiperSlide>
             <SwiperSlide>
               <div className="brand__card">
-                <img src={brandImg2} alt="brandImg1" />
+                <img src={brandImg2} alt="brandImg2" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="brand__card">
-                <img src={brandImg3} alt="brandImg1" />
+                <img src={brandImg3} alt="brandImg3" />
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className="brand__card">
                 <img src={brandImg1} alt="brandImg1" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="brand__card">
+                <img src={brandImg2} alt="brandImg2" />
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="brand__card">
+                <img src={brandImg3} alt="brandImg3" />
               </div>
             </SwiperSlide>
           </Swiper>

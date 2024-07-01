@@ -1,0 +1,55 @@
+.admin {
+  width: 400px;
+  height: 100vh;
+  background: #454545;
+  margin-top: -14.5%;
+  padding: 20px 0;
+  &__panel {
+    display: grid;
+    flex-direction: column;
+    gap: 38px;
+    &__title {
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      font-size: 28px;
+      line-height: 38.25px;
+      font-weight: 400;
+      gap: 12px;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 8px;
+      li {
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 400;
+        padding: 8px;
+        line-height: 24.59px;
+        gap: 15px;
+        &:hover {
+          background: #ffffff33;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  &__btn {
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24.59px;
+    background: none;
+    border: none;
+    gap: 14px;
+    margin-top: 87%;
+    svg {
+      font-size: 28px;
+    }
+  }
+}

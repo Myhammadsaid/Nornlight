@@ -13,6 +13,7 @@ import Contact from "./pages/contact/Contact";
 import AllKatalog from "./pages/all-katalog/AllKatalog";
 import SingleRoute from "./pages/single-route/SingleRoute";
 import Login from "./pages/login/Login";
+import Admin from "./pages/admin/Admin";
 
 function App() {
   let location = useLocation();
@@ -33,6 +34,7 @@ function App() {
         <Route path="/garant" element={<Garant />} />
         <Route path="/all-blog" element={<AllBlog />} />
         <Route path="/return" element={<Return />} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {check ? <></> : <Footer />}

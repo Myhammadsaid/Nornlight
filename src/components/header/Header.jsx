@@ -29,22 +29,46 @@ const Header = () => {
             id="navbar-responsive"
           >
             <div className="header__top__items1">
-              <Link to={"/about-company"} className="header__top__item">
+              <Link
+                onClick={() => setToggle(false)}
+                to={"/about-company"}
+                className="header__top__item"
+              >
                 О компании
               </Link>
-              <Link to={"/shipining-payment"} className="header__top__item">
+              <Link
+                onClick={() => setToggle(false)}
+                to={"/shipining-payment"}
+                className="header__top__item"
+              >
                 Доставка и оплата
               </Link>
-              <Link to={"/return"} className="header__top__item">
+              <Link
+                onClick={() => setToggle(false)}
+                to={"/return"}
+                className="header__top__item"
+              >
                 Возврат
               </Link>
-              <Link to={"/garant"} className="header__top__item">
+              <Link
+                onClick={() => setToggle(false)}
+                to={"/garant"}
+                className="header__top__item"
+              >
                 Гарантии
               </Link>
-              <Link to={"/contact"} className="header__top__item">
+              <Link
+                onClick={() => setToggle(false)}
+                to={"/contact"}
+                className="header__top__item"
+              >
                 Контакты
               </Link>
-              <Link to={"/all-blog"} className="header__top__item">
+              <Link
+                onClick={() => setToggle(false)}
+                to={"/all-blog"}
+                className="header__top__item"
+              >
                 Блог
               </Link>
             </div>
