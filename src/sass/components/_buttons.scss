@@ -23,7 +23,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 20px auto;
+  margin-top: 20px;
   background: #fff;
   gap: 10px;
   &:hover {
@@ -98,7 +98,15 @@ button {
       padding: 16px 50px;
       background: #454545;
       border-radius: 10px;
-      border: none;
+      border: 1px solid #454545;
+      transition: 0.2s;
+      &:hover {
+        background: #fff;
+        color: #454545;
+      }
+      &:active {
+        transform: scale(0.95);
+      }
     }
     &__heart {
       width: 52px;
@@ -110,6 +118,9 @@ button {
       justify-content: center;
       border: none;
       background: #f8f8f8;
+      &:active {
+        transform: scale(0.95);
+      }
     }
   }
 }

@@ -60,7 +60,7 @@ const Company = () => {
           <button
             onClick={() => navigate("/about-company")}
             style={{ display: "none" }}
-            className="home__titles__btn display__flex home__btn2"
+            className="home__titles__btn display__flex home__btn2 width__100"
           >
             О компании <IoIosArrowRoundForward />
           </button>

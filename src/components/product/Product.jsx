@@ -10,7 +10,7 @@ const Product = ({ isMarriade, data, isLoading }) => {
 
   let productItems = data?.map((el) => (
     <div key={el.id} className="product__card">
-      <img src={el.url} alt="productImg" />
+      <img src={el.url[0]} alt="productImg" />
       <div className="product__content">
         <Link to={`/products/${el.id}`}>
           <h3 className="product__content__text" title={el.title}>
@@ -58,7 +58,7 @@ const Product = ({ isMarriade, data, isLoading }) => {
             <button
               onClick={() => navigate("/all-products")}
               style={{ display: "none" }}
-              className="home__titles__btn display__flex home__btn2"
+              className="home__titles__btn display__flex home__btn2 width__100"
             >
               Весь товары <IoIosArrowRoundForward />
             </button>
