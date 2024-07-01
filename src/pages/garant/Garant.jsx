@@ -6,12 +6,12 @@ const Garant = () => {
       <section className="garant">
         <div className="container">
           <div className="garant__style">
-            <h1 className="garant__style__title">Гарантии</h1>
+            <h1 className="garant__style__title h1">Гарантии</h1>
             <div className="garant__style__content">
-              <h2 className="garant__text">
+              <h2 className="garant__text h2">
                 Обмен и возврат по желанию покупателя
               </h2>
-              <p className="garant__par">
+              <p className="garant__par h3">
                 Все товары в магазине «NornLight» имеют гарантию. Она заявляется
                 производителем и имеет определенный срок действия на различные
                 группы товаров. Если ваше изделие вышло из строя в

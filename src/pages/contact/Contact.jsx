@@ -6,10 +6,10 @@ const Contact = () => {
       <section className="contact">
         <div className="container">
           <div className="contact__style">
-            <h1 className="contact__style__title">Контакты</h1>
+            <h1 className="contact__style__title h1">Контакты</h1>
             <div className="contact__content">
-              <h2 className="contact__content__text">8 (800) 890-46-56</h2>
-              <p className="contact__content__par">
+              <h2 className="contact__content__text h2">8 (800) 890-46-56</h2>
+              <p className="contact__content__par h3">
                 Пн-Пт: 10:00 до 19:00 <br /> Сб-Вс: заказ через корзину
                 <br />
                 Телефоны:

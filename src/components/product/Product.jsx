@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsCart } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import Category from "../category/Category";
+import ImgModel from "../img-model/ImgModel";
 
 const Product = ({ isMarriade, data, isLoading }) => {
+  const [toggle, setToggle] = useState(false);
   let navigate = useNavigate();
 
   let productItems = data?.map((el) => (
     <div key={el.id} className="product__card">
-      <img src={el.url[0]} alt="productImg" />
+      <img
+        onClick={() => setToggle(!toggle)}
+        src={el.url[0]}
+        alt="productImg"
+      />
       <div className="product__content">
         <Link to={`/products/${el.id}`}>
           <h3 className="product__content__text" title={el.title}>
@@ -67,6 +73,7 @@ const Product = ({ isMarriade, data, isLoading }) => {
           )}
         </div>
       </section>
+      {toggle ? <ImgModel data={data} setToggle={setToggle} /> : <></>}
     </div>
   );
 };

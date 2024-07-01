@@ -6,14 +6,14 @@ const Return = () => {
       <section className="return">
         <div className="container">
           <div className="return__style">
-            <h1 className="return__style__title">Возврат</h1>
+            <h1 className="return__style__title h1">Возврат</h1>
             <div className="return__style__content">
               <div className="return__style__content__box">
-                <h2 className="return__text">
+                <h2 className="return__text h2">
                   Обмен и возврат по желанию покупателя
                 </h2>
                 <span>
-                  <p className="return__par">
+                  <p className="return__par h3">
                     Если товар по каким-то причинам не подошел вам, вы имеете
                     право вернуть его или обменять на другой в течение 7 дней* с
                     момента покупки при соблюдении следующих условий:

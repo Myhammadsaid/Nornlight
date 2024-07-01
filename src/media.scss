@@ -74,9 +74,6 @@
   .width__100 {
     margin: 20px auto;
   }
-  .brand__btns {
-    display: none;
-  }
   .blog__wrapper {
     display: grid;
     grid-template-columns: auto;
@@ -163,31 +160,19 @@
   .home__titles__btn {
     max-width: 350px !important;
   }
-  .shipining__style__title,
-  .return__style__title,
-  .garant__style__title,
-  .contact__style__title {
-    font-size: 34px !important;
-  }
   .company__content1__title {
     font-size: 38px !important;
   }
-  .return__text,
-  .shipining__content__box__text,
-  .garant__text,
-  .contact__text {
+  .h1 {
+    font-size: 34px !important;
+  }
+  .h2 {
     font-size: 20px !important;
   }
-  .shipining__content__box__par,
-  .company__style__par,
-  .garant__par,
-  .contact__par {
+  .h3 {
     font-size: 16px !important;
   }
   span {
-    .return__par {
-      font-size: 16px !important;
-    }
     ul {
       li {
         font-size: 16px !important;
@@ -262,5 +247,8 @@
   }
   .single__style__img {
     max-width: 380px !important;
+  }
+  .carousel {
+    width: 380px !important;
   }
 }

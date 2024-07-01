@@ -6,11 +6,16 @@ import katalogImg3 from "../../assets/katalog__img3.png";
 import katalogImg4 from "../../assets/katalog__img4.png";
 import katalogImg5 from "../../assets/katalog__img5.png";
 import katalogImg6 from "../../assets/katalog__img6.png";
+import katalogImg7 from "../../assets/katalog__img7.png";
+import katalogImg8 from "../../assets/katalog__img8.png";
+import katalogImg9 from "../../assets/katalog__img9.png";
+import katalogImg10 from "../../assets/katalog__img10.png";
+import katalogImg11 from "../../assets/katalog__img11.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { useNavigate } from "react-router-dom";
 
-const Katalog = () => {
+const Katalog = ({ isMarriadeCard }) => {
   let navigate = useNavigate();
   return (
     <div>
@@ -82,6 +87,67 @@ const Katalog = () => {
               </ul>
               <img src={katalogImg6} alt="katalogImg1" />
             </div>
+            {isMarriadeCard ? (
+              <>
+                <div className="katalog__card">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Трековые светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg7} alt="katalogImg1" />
+                </div>
+                <div className="katalog__card">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Уличные светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg8} alt="katalogImg1" />
+                </div>
+                <div className="katalog__card">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Технические светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg9} alt="katalogImg1" />
+                </div>
+                <div className="katalog__card katalog__width">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Уличные светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg10} alt="katalogImg1" />
+                </div>
+                <div className="katalog__card katalog__width">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Технические светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg11} alt="katalogImg1" />
+                </div>{" "}
+              </>
+            ) : (
+              <></>
+            )}
           </div>
           <Swiper
             spaceBetween={30}
@@ -145,6 +211,67 @@ const Katalog = () => {
               </ul>
               <img src={katalogImg6} alt="katalogImg1" />
             </SwiperSlide>
+            {isMarriadeCard ? (
+              <>
+                <SwiperSlide className="katalog__card">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Трековые светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg7} alt="katalogImg1" />
+                </SwiperSlide>
+                <SwiperSlide className="katalog__card">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Уличные светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg8} alt="katalogImg1" />
+                </SwiperSlide>
+                <SwiperSlide className="katalog__card">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Технические светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg9} alt="katalogImg1" />
+                </SwiperSlide>
+                <SwiperSlide className="katalog__card katalog__width">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Уличные светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg10} alt="katalogImg1" />
+                </SwiperSlide>
+                <SwiperSlide className="katalog__card katalog__width">
+                  <ul className="katalog__card__content">
+                    <li className="katalog__card__content__text">
+                      Технические светильники
+                    </li>
+                    <li className="katalog__card__content__text">
+                      От 540₽ <IoIosArrowRoundForward />
+                    </li>
+                  </ul>
+                  <img src={katalogImg11} alt="katalogImg1" />
+                </SwiperSlide>
+              </>
+            ) : (
+              <></>
+            )}
           </Swiper>
           <button
             onClick={() => navigate("/all-katalog")}

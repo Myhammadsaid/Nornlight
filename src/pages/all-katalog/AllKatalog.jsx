@@ -6,7 +6,7 @@ import Brand from "../../components/brand/Brand";
 const AllKatalog = () => {
   return (
     <div>
-      <Katalog />
+      <Katalog isMarriadeCard={true} />
       <Brand />
       <Blog isMarriade={true} isMarriadeProduct={false} />
     </div>

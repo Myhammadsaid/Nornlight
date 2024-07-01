@@ -10,11 +10,11 @@ const ShipiningPayment = () => {
       <section className="shipining">
         <div className="container">
           <div className="shipining__style">
-            <h1 className="shipining__style__title">Доставка и оплата</h1>
+            <h1 className="shipining__style__title h1">Доставка и оплата</h1>
             <div className="shipining__content">
               <div className="shipining__content__box">
-                <h2 className="shipining__content__box__text">Доставка</h2>
-                <p className="shipining__content__box__par">
+                <h2 className="shipining__content__box__text h2">Доставка</h2>
+                <p className="shipining__content__box__par h3">
                   Мы осуществляем доставку со склада по Москве и Московской
                   области собственной курьерской службой. Транспортными
                   компаниями нашу продукцию мы доставляем по всей территории РФ,
