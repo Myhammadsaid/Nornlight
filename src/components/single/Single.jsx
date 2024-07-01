@@ -15,7 +15,7 @@ const Single = () => {
           <div className="single__style">
             <img
               className="single__style__img"
-              src={data?.url}
+              src={data?.url[0]}
               alt={data?.title}
             />
             <div className="single__content">

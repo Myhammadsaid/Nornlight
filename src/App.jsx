@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import NotFound from "./components/notfound/NotFound";
@@ -12,11 +12,15 @@ import Garant from "./pages/garant/Garant";
 import Contact from "./pages/contact/Contact";
 import AllKatalog from "./pages/all-katalog/AllKatalog";
 import SingleRoute from "./pages/single-route/SingleRoute";
+import Login from "./pages/login/Login";
 
 function App() {
+  let location = useLocation();
+  let check = location?.pathname == "/login" || location?.pathname == "/admin";
+
   return (
     <>
-      <Header />
+      {check ? <></> : <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-products" element={<AllProducts />} />
@@ -25,12 +29,13 @@ function App() {
         <Route path="/all-katalog" element={<AllKatalog />} />
         <Route path="/products/:id" element={<SingleRoute />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/garant" element={<Garant />} />
         <Route path="/all-blog" element={<AllBlog />} />
         <Route path="/return" element={<Return />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      {check ? <></> : <Footer />}
     </>
   );
 }
