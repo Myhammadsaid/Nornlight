@@ -6,11 +6,11 @@ import { BsCart } from "react-icons/bs";
 import { FaSignal } from "react-icons/fa6";
 import { FiHeart } from "react-icons/fi";
 import { BiMenuAltRight } from "react-icons/bi";
-import { IoMdClose } from "react-icons/io";
+import { IoIosArrowRoundForward, IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
-import PhoneModel from "../phone-model/PhoneModel";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Model from "../model/Model";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
@@ -18,6 +18,12 @@ const Header = () => {
   const carts = useSelector((state) => state.cart.value.length);
   const heart = useSelector((state) => state.wishlist.value.length);
   let navigate = useNavigate();
+
+  if (
+    useLocation().pathname === "/login" ||
+    useLocation().pathname === "/admin"
+  )
+    return <></>;
 
   return (
     <div>
@@ -158,7 +164,34 @@ const Header = () => {
           </form>
         </div>
       </motion.header>
-      {phonetoggle ? <PhoneModel setPhonetoggle={setPhonetoggle} /> : <></>}
+      {phonetoggle ? (
+        <Model setPhonetoggle={setPhonetoggle}>
+          <h1 className="phone__text">
+            Заполните, <br />и мы перезвоним
+          </h1>
+          <form className="phone__form">
+            <input
+              type="text"
+              placeholder="ФИО"
+              className="phone__form__input"
+            />
+            <input
+              type="number"
+              placeholder="Телефон"
+              className="phone__form__input"
+            />
+            <button className="phone__form__btn">
+              Весь каталог <IoIosArrowRoundForward />
+            </button>
+          </form>
+          <IoMdClose
+            onClick={() => setPhonetoggle(false)}
+            className="phone__close"
+          />
+        </Model>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

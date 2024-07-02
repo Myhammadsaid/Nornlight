@@ -4,9 +4,16 @@ import singleImg from "../../assets/single__img.png";
 import { useParams } from "react-router-dom";
 import { FiHeart } from "react-icons/fi";
 import SingleSkeleton from "../single-skeleton/SingleSkeleton";
+import { addToCart } from "../../context/slices/cartSlice";
+import { toggleHeart } from "../../context/slices/wishlistSlice";
+import { FaCheck } from "react-icons/fa6";
+import { useDispatch, useSelector } from "react-redux";
 
 const Single = () => {
   let { id } = useParams();
+  let disptach = useDispatch();
+  const carts = useSelector((state) => state.cart.value);
+  const wishlist = useSelector((state) => state.wishlist.value);
   let { data, isLoading } = useDetailProductQuery(id);
 
   return (
@@ -48,11 +55,28 @@ const Single = () => {
                     <button className="single__content__btns__btn">1</button>
                     <button className="single__content__btns__btn">+</button>
                   </div>
-                  <button className="single__content__btns__cart">
-                    В корзину
+                  <button
+                    onClick={() => disptach(addToCart(data))}
+                    className="single__content__btns__cart"
+                  >
+                    {carts?.some((el) => el.id === data?.id) ? (
+                      <>
+                        В корзину
+                        <FaCheck />
+                      </>
+                    ) : (
+                      "В корзину"
+                    )}
                   </button>
-                  <button className="single__content__btns__heart">
-                    <FiHeart />
+                  <button
+                    onClick={() => disptach(toggleHeart(data))}
+                    className="single__content__btns__heart"
+                  >
+                    {wishlist?.some((el) => el.id === data?.id) ? (
+                      <FiHeart style={{ fill: "red", stroke: "red" }} />
+                    ) : (
+                      <FiHeart />
+                    )}
                   </button>
                 </div>
               </div>

@@ -6,6 +6,7 @@ import {
   deleteAllCart,
 } from "../../context/slices/cartSlice";
 import { Link } from "react-router-dom";
+import CartNotFound from "../cart-notfound/CartNotFound";
 
 const ProductCart = () => {
   const carts = useSelector((state) => state?.cart?.value);
@@ -56,7 +57,7 @@ const ProductCart = () => {
           <div className="cart__cards">{cartItems}</div>
         </>
       ) : (
-        <h1>Cart is empty</h1>
+        <CartNotFound />
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import NotFound from "./components/notfound/NotFound";
@@ -18,12 +18,9 @@ import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
 
 function App() {
-  let location = useLocation();
-  let check = location?.pathname == "/login" || location?.pathname == "/admin";
-
   return (
     <>
-      {check ? <></> : <Header />}
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-products" element={<AllProducts />} />
@@ -41,7 +38,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {check ? <></> : <Footer />}
+      <Footer />
     </>
   );
 }

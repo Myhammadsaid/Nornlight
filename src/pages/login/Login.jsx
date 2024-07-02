@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import loginImg from "../../assets/login__img.png";
 import { Autocomplete, Button, Stack, TextField } from "@mui/material";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
@@ -12,6 +12,10 @@ const initialState = {
 };
 
 const Login = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const { formData, handleChange, setFormData } =
     useGetInputValue(initialState);
 

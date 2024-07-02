@@ -4,12 +4,10 @@ import { FiHeart } from "react-icons/fi";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import Category from "../category/Category";
-import ImgModel from "../img-model/ImgModel";
 import Skeleton from "../skeleton/Skeleton";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../context/slices/cartSlice";
 import { toggleHeart } from "../../context/slices/wishlistSlice";
-import { TbHeartCheck } from "react-icons/tb";
 
 const Product = ({ isMarriade, data, isLoading }) => {
   const wishlist = useSelector((state) => state?.wishlist?.value);
@@ -55,7 +53,7 @@ const Product = ({ isMarriade, data, isLoading }) => {
         onClick={() => dispatch(toggleHeart(el))}
       >
         {wishlist?.some((item) => item.id === el.id) ? (
-          <TbHeartCheck />
+          <FiHeart style={{ fill: "red", stroke: "red" }} />
         ) : (
           <FiHeart />
         )}
@@ -97,7 +95,6 @@ const Product = ({ isMarriade, data, isLoading }) => {
           )}
         </div>
       </section>
-      {toggle ? <ImgModel data={data} setToggle={setToggle} /> : <></>}
     </div>
   );
 };

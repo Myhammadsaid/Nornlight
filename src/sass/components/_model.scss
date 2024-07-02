@@ -1,0 +1,35 @@
+.overflow {
+  width: 100%;
+  height: 100%;
+  opacity: 50%;
+  position: fixed;
+  animation: forwards phoneoverlay 0.3s ease;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+@keyframes phoneoverlay {
+  to {
+    background: #454545;
+  }
+}
+
+.model {
+  position: fixed;
+  transform: translate(-50%, -80%);
+  border-radius: 50px;
+  top: 50%;
+  left: 50%;
+  max-width: 800px;
+  background: #fff;
+  animation: forwards phone 0.3s ease;
+  padding: 64px;
+  z-index: 12;
+}
+
+@keyframes phone {
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
