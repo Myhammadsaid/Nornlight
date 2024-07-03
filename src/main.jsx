@@ -4,7 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import { store } from "./context/index.js";
 import { Provider } from "react-redux";
 import "./sass/main.scss";
-import "./index.scss";
 import "./media.scss";
 const App = lazy(() => import("./App"));
 

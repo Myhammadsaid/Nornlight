@@ -36,11 +36,13 @@ const Login = () => {
                 type="text"
                 value={formData.username}
                 onChange={handleChange}
+                placeholder="Username"
                 className="login__content__input"
                 name="username"
               />
               <input
-                type="text"
+                type="password"
+                placeholder="Password"
                 value={formData.password}
                 onChange={handleChange}
                 className="login__content__input"

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: Manrope;
+  src: url(/src/fonts/Manrope-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Manrope, "sans-serif";
+  scroll-behavior: smooth;
+}
