@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import ProductCart from "../../components/productCart/ProductCart";
+import CartMassega from "../../components/cart-message/CartMassega";
 
 const Cart = () => {
   useEffect(() => {
@@ -8,6 +9,7 @@ const Cart = () => {
   return (
     <div>
       <ProductCart />
+      <CartMassega />
     </div>
   );
 };

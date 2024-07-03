@@ -124,3 +124,44 @@ button {
     }
   }
 }
+
+.cart__titles__btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart__card__content {
+  &__btns {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    button {
+      &:first-child,
+      &:nth-child(3) {
+        border: none;
+        font-size: 26px;
+        background: none;
+      }
+      &:nth-child(2) {
+        color: #454545;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21.86px;
+        padding: 16px 26px;
+        border-radius: 10px;
+        background: inherit;
+        border: 1px solid #454545a6;
+      }
+      &:last-child {
+        background: none;
+        border: none;
+        font-size: 26px;
+      }
+    }
+  }
+}

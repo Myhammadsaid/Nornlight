@@ -1,0 +1,113 @@
+.cart__message {
+  margin-bottom: 80px;
+  &__style {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 58px;
+    .cart__message__content {
+      background: #f2f2f2;
+      border-radius: 20px;
+      padding: 45px;
+      &__text {
+        color: #454545;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 35.2px;
+        margin-bottom: 32px;
+      }
+      &__inputs {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 37px;
+        gap: 20px;
+        input {
+          width: 373px;
+          height: 49.03px;
+          text-indent: 20px;
+          border-radius: 100px;
+          color: #454545;
+          border: 1px solid #454545;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20.8px;
+          background: inherit;
+        }
+      }
+      .line {
+        width: 100%;
+        opacity: 10%;
+        border: 1px solid #000000;
+        margin-bottom: 37px;
+      }
+      &__inputs2 {
+        max-width: 767px;
+        .cart__input,
+        .cart__textarea {
+          width: 100%;
+          height: 49.03px;
+          color: #454545;
+          margin-bottom: 31px;
+          text-indent: 20px;
+          border-radius: 100px;
+          border: 1px solid #454545;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 20.8px;
+          background: inherit;
+        }
+        .cart__textarea {
+          resize: none;
+          padding-top: 18px;
+          border-radius: 26px;
+          height: 150.87px;
+        }
+      }
+      &__box {
+        display: flex;
+        color: #454545;
+        opacity: 50%;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 70px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20.8px;
+        gap: 40px;
+      }
+      &__price {
+        color: #454545;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 26.4px;
+        margin-bottom: 28px;
+      }
+      &__btns {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 27px;
+        &__btn {
+          color: #fff;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 21.86px;
+          border: 1px solid #454545;
+          background: #454545;
+          border-radius: 100px;
+          padding: 14px 135px;
+        }
+        p {
+          color: #454545;
+          font-size: 12px;
+          font-weight: 600;
+          line-height: 15.6px;
+          opacity: 50%;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+        }
+      }
+    }
+  }
+}

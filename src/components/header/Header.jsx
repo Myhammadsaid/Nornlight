@@ -8,7 +8,7 @@ import { FiHeart } from "react-icons/fi";
 import { BiMenuAltRight } from "react-icons/bi";
 import { IoIosArrowRoundForward, IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Model from "../model/Model";
 
@@ -39,48 +39,48 @@ const Header = () => {
             id="navbar-responsive"
           >
             <div className="header__top__items1">
-              <Link
+              <NavLink
                 onClick={() => setToggle(false)}
                 to={"/about-company"}
                 className="header__top__item"
               >
                 О компании
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 onClick={() => setToggle(false)}
                 to={"/shipining-payment"}
                 className="header__top__item"
               >
                 Доставка и оплата
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 onClick={() => setToggle(false)}
                 to={"/return"}
                 className="header__top__item"
               >
                 Возврат
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 onClick={() => setToggle(false)}
                 to={"/garant"}
                 className="header__top__item"
               >
                 Гарантии
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 onClick={() => setToggle(false)}
                 to={"/contact"}
                 className="header__top__item"
               >
                 Контакты
-              </Link>
-              <Link
+              </NavLink>
+              <NavLink
                 onClick={() => setToggle(false)}
                 to={"/all-blog"}
                 className="header__top__item"
               >
                 Блог
-              </Link>
+              </NavLink>
             </div>
             <div className="header__top__items2">
               <a href="#" className="header__top__item phone">
@@ -180,7 +180,10 @@ const Header = () => {
               placeholder="Телефон"
               className="phone__form__input"
             />
-            <button className="phone__form__btn">
+            <button
+              onClick={() => navigate("/all-katalog")}
+              className="phone__form__btn"
+            >
               Весь каталог <IoIosArrowRoundForward />
             </button>
           </form>

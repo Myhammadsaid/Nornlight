@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../context/slices/cartSlice";
 import { toggleHeart } from "../../context/slices/wishlistSlice";
 
-const Product = ({ isMarriade, data, isLoading }) => {
+const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
   const wishlist = useSelector((state) => state?.wishlist?.value);
   const carts = useSelector((state) => state.cart.value);
   const [toggle, setToggle] = useState(false);
@@ -79,7 +79,7 @@ const Product = ({ isMarriade, data, isLoading }) => {
             )}
           </div>
           {isMarriade ? <Category /> : <></>}
-          <div className="product__cards">
+          <div style={{ justifyContent }} className="product__cards">
             {isLoading ? <Skeleton /> : productItems}
           </div>
           {isMarriade ? (

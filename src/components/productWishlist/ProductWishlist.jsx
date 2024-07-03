@@ -7,7 +7,7 @@ const ProductWishlist = () => {
 
   return (
     <div>
-      <Product data={wishlist} />
+      <Product data={wishlist} justifyContent="start" />
     </div>
   );
 };

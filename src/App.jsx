@@ -16,29 +16,30 @@ import Login from "./pages/login/Login";
 import Admin from "./pages/admin/Admin";
 import Cart from "./pages/cart/Cart";
 import Wishlist from "./pages/wishlist/Wishlist";
+import Layout from "./pages/layout/Layout";
 
 function App() {
   return (
     <>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/all-products" element={<AllProducts />} />
-        <Route path="/about-company" element={<AboutCompany />} />
-        <Route path="/shipining-payment" element={<ShipiningPayment />} />
-        <Route path="/all-katalog" element={<AllKatalog />} />
-        <Route path="/products/:id" element={<SingleRoute />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/garant" element={<Garant />} />
-        <Route path="/all-blog" element={<AllBlog />} />
-        <Route path="/return" element={<Return />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/all-products" element={<AllProducts />} />
+          <Route path="/about-company" element={<AboutCompany />} />
+          <Route path="/shipining-payment" element={<ShipiningPayment />} />
+          <Route path="/all-katalog" element={<AllKatalog />} />
+          <Route path="/products/:id" element={<SingleRoute />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/garant" element={<Garant />} />
+          <Route path="/all-blog" element={<AllBlog />} />
+          <Route path="/return" element={<Return />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
-      <Footer />
     </>
   );
 }
