@@ -1,0 +1,87 @@
+.manage {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 20px;
+  gap: 20px;
+  &__title {
+    color: #454545;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+  &__cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    .manage__card {
+      max-width: 326px;
+      display: grid;
+      grid-template-columns: auto;
+      gap: 29px;
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &__content {
+        max-width: 227px;
+        padding: 0 20px;
+        &__title {
+          color: #454545;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 22px;
+          margin-bottom: 24px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        &__items {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          span {
+            &:first-child {
+              display: grid;
+              grid-template-columns: auto;
+              gap: 5px;
+              s {
+                color: #9f9f9f;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 13.2px;
+              }
+              .manage__card__item {
+                color: #454545;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 22px;
+              }
+            }
+            &:last-child {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              svg {
+                width: 40px;
+                height: 25px;
+                cursor: pointer;
+                border-radius: 100px;
+                border: 1px solid #454545;
+                &:last-child {
+                  color: #fff;
+                  background: #454545;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
