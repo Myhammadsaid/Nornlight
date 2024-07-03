@@ -5,11 +5,11 @@ import footerLogo from "../../assets/footer__logo.png";
 import { useLocation } from "react-router-dom";
 
 const Footer = () => {
-  if (
-    useLocation().pathname === "/login" ||
-    useLocation().pathname === "/admin"
-  )
+  let { pathname } = useLocation();
+
+  if (pathname.includes("login") || pathname.includes("admin")) {
     return <></>;
+  }
 
   return (
     <div>

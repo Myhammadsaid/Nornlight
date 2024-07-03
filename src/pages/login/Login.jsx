@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import loginImg from "../../assets/login__img.png";
-import { Autocomplete, Button, Stack, TextField } from "@mui/material";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
 import { IoIosArrowRoundForward } from "react-icons/io";
-
-const login = [{ title: "john32", year: "87654321" }];
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setToken } from "../../context/slices/authSlice";
 
 const initialState = {
   username: "",
@@ -12,6 +12,9 @@ const initialState = {
 };
 
 const Login = () => {
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -23,6 +26,12 @@ const Login = () => {
     e.preventDefault();
     console.log(formData);
     setFormData(initialState);
+    if (formData.username === "john32" && formData.password === "87654321") {
+      dispatch(setToken("fake-token"));
+      navigate("/admin");
+    } else {
+      console.log("User Name or Password is incorrect");
+    }
   };
 
   return (

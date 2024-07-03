@@ -1,11 +1,15 @@
 .admin {
   width: 400px;
   height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   background: #454545;
-  margin-top: -197px;
   padding: 20px 0;
   .admin__style {
+    display: grid;
     align-content: space-between;
+    gap: 100%;
     .admin__panel {
       display: grid;
       flex-direction: column;

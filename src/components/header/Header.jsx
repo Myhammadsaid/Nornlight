@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/header__logo.png";
 import { RiMenu2Fill } from "react-icons/ri";
 import { IoSearchOutline } from "react-icons/io5";
@@ -7,23 +7,37 @@ import { FaSignal } from "react-icons/fa6";
 import { FiHeart } from "react-icons/fi";
 import { BiMenuAltRight } from "react-icons/bi";
 import { IoIosArrowRoundForward, IoMdClose } from "react-icons/io";
-import { motion } from "framer-motion";
 import { useNavigate, useLocation, NavLink, Link } from "react-router-dom";
+import { useGetProductsQuery } from "../../context/api/productApi";
 import { useSelector } from "react-redux";
+import { motion } from "framer-motion";
 import Model from "../model/Model";
+import Search from "../search/Search";
 
 const Header = () => {
+  let { pathname } = useLocation();
+
+  if (pathname.includes("login") || pathname.includes("admin")) {
+    return <></>;
+  }
+
   const [toggle, setToggle] = useState(false);
   const [phonetoggle, setPhonetoggle] = useState(false);
   const carts = useSelector((state) => state.cart.value.length);
   const heart = useSelector((state) => state.wishlist.value.length);
   let navigate = useNavigate();
 
-  if (
-    useLocation().pathname === "/login" ||
-    useLocation().pathname === "/admin"
-  )
-    return <></>;
+  const { data } = useGetProductsQuery();
+  const [searchValue, setSearchValue] = useState("");
+  const [filterData, setFilterData] = useState(data);
+
+  useEffect(() => {
+    setFilterData(
+      data?.filter((product) =>
+        product.title.toLowerCase().includes(searchValue.trim().toLowerCase())
+      )
+    );
+  }, [searchValue]);
 
   return (
     <div>
@@ -116,6 +130,8 @@ const Header = () => {
             </a>
             <form className="header__bottom__form display__none">
               <input
+                value={searchValue}
+                onChange={(e) => setSearchValue(e.target.value)}
                 type="search"
                 placeholder="Поиск по товарам"
                 className="header__bottom__form__input"
@@ -156,12 +172,15 @@ const Header = () => {
             className="header__bottom__form display__block"
           >
             <input
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
               type="search"
               placeholder="Поиск по товарам"
               className="header__bottom__form__input"
             />
             <IoSearchOutline />
           </form>
+          <Search filterData={filterData} searchValue={searchValue} />
         </div>
       </motion.header>
       {phonetoggle ? (

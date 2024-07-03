@@ -1,20 +1,50 @@
-import React, { useState } from "react";
-import { useGetCategoryQuery } from "../../context/api/productApi";
+import React, { useState, useEffect } from "react";
+import { useGetCategoryQuery } from "../../context/api/categoryApi";
 
-const Category = () => {
-  const { data } = useGetCategoryQuery();
-  const [category, setCategory] = useState("/");
+const Category = ({ products }) => {
+  const { data: categories } = useGetCategoryQuery();
+  const [category, setCategory] = useState("all");
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  let categoryItems = data?.map((category) => (
-    <li onClick={() => setCategory(category.title)} key={category.id}>
-      <span>{category.title}</span>
+  useEffect(() => {
+    if (category !== "all") {
+      const filtered = products.filter((el) =>
+        el.category.toLowerCase().includes(category.toLowerCase())
+      );
+      setFilteredProducts(filtered);
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [category, products]);
+
+  const handleCategoryClick = (title) => {
+    setCategory(title);
+  };
+
+  let categoryItems = categories?.map((el) => (
+    <li
+      onClick={() => handleCategoryClick(el.title)}
+      key={el.id}
+      className={category === el.title ? "active" : ""}
+      value={el.title}
+    >
+      {el.title}
     </li>
   ));
 
   return (
     <div>
       <div className="product__category">
-        <ul>{categoryItems}</ul>
+        <ul>
+          <li
+            className={category === "all" ? "active" : ""}
+            onClick={() => handleCategoryClick("all")}
+            value="all"
+          >
+            All
+          </li>
+          {categoryItems}
+        </ul>
       </div>
     </div>
   );

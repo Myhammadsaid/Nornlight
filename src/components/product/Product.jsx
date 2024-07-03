@@ -78,7 +78,7 @@ const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
               <></>
             )}
           </div>
-          {isMarriade ? <Category /> : <></>}
+          {isMarriade ? <Category products={data} /> : <></>}
           <div style={{ justifyContent }} className="product__cards">
             {isLoading ? <Skeleton /> : productItems}
           </div>

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import AdminPanel from "../../components/admin__panel/AdminPanel";
-import CreateProduct from "../../components/create-product/CreateProduct";
+import { Outlet } from "react-router-dom";
 
 const Admin = () => {
   useEffect(() => {
@@ -9,7 +9,9 @@ const Admin = () => {
   return (
     <div style={{ display: "flex" }}>
       <AdminPanel />
-      <CreateProduct />
+      <div style={{ marginTop: "-190px", marginLeft: "400px" }}>
+        <Outlet />
+      </div>
     </div>
   );
 };
