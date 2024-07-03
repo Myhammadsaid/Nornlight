@@ -8,6 +8,7 @@ import Skeleton from "../skeleton/Skeleton";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../context/slices/cartSlice";
 import { toggleHeart } from "../../context/slices/wishlistSlice";
+import Model from "../model/Model";
 
 const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
   const wishlist = useSelector((state) => state?.wishlist?.value);
@@ -94,6 +95,10 @@ const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
             <></>
           )}
         </div>
+
+        {/* <Model> */}
+        {/* <div className="product__modul"><img src={} alt="" /></div> */}
+        {/* </Model> */}
       </section>
     </div>
   );
