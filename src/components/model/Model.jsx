@@ -1,10 +1,19 @@
 import React from "react";
+import { IoMdClose } from "react-icons/io";
 
-const Model = ({ children, setPhonetoggle }) => {
+const Model = ({ children, setModulToggle, data }) => {
+  console.log(data);
+
   return (
     <div>
-      <div onClick={() => setPhonetoggle(false)} className="overflow"></div>
-      <div className="model">{children}</div>
+      <div onClick={() => setModulToggle(false)} className="overflow"></div>
+      <div className="model">
+        {children}{" "}
+        <IoMdClose
+          onClick={() => setModulToggle(false)}
+          className="phone__close"
+        />
+      </div>
     </div>
   );
 };

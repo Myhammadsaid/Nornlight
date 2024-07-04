@@ -22,7 +22,7 @@ const Header = () => {
   }
 
   const [toggle, setToggle] = useState(false);
-  const [phonetoggle, setPhonetoggle] = useState(false);
+  const [modulToggle, setModulToggle] = useState(false);
   const carts = useSelector((state) => state.cart.value.length);
   const heart = useSelector((state) => state.wishlist.value.length);
   let navigate = useNavigate();
@@ -101,7 +101,7 @@ const Header = () => {
                 8 (800) 890-46-56
               </a>
               <a
-                onClick={() => setPhonetoggle(!phonetoggle)}
+                onClick={() => setModulToggle(!phonetoggle)}
                 href="#"
                 className="header__top__item tell"
               >
@@ -137,6 +137,12 @@ const Header = () => {
                 className="header__bottom__form__input"
               />
               <IoSearchOutline />
+              <Search
+                width={"580px"}
+                left={"34%"}
+                filterData={filterData}
+                searchValue={searchValue}
+              />
             </form>
             <div className="header__bottom__items">
               <Link
@@ -179,12 +185,17 @@ const Header = () => {
               className="header__bottom__form__input"
             />
             <IoSearchOutline />
+            <Search
+              width={"80%"}
+              left={"50px"}
+              filterData={filterData}
+              searchValue={searchValue}
+            />
           </form>
-          <Search filterData={filterData} searchValue={searchValue} />
         </div>
       </motion.header>
-      {phonetoggle ? (
-        <Model setPhonetoggle={setPhonetoggle}>
+      {modulToggle ? (
+        <Model setModulToggle={setModulToggle}>
           <h1 className="phone__text">
             Заполните, <br />и мы перезвоним
           </h1>
@@ -206,10 +217,6 @@ const Header = () => {
               Весь каталог <IoIosArrowRoundForward />
             </button>
           </form>
-          <IoMdClose
-            onClick={() => setPhonetoggle(false)}
-            className="phone__close"
-          />
         </Model>
       ) : (
         <></>
