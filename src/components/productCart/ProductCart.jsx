@@ -8,7 +8,6 @@ import {
   deleteAllCart,
 } from "../../context/slices/cartSlice";
 import { Link } from "react-router-dom";
-import CartNotFound from "../cart-notfound/CartNotFound";
 
 const ProductCart = () => {
   const carts = useSelector((state) => state?.cart?.value);
@@ -58,40 +57,34 @@ const ProductCart = () => {
 
   return (
     <div>
-      {carts?.length ? (
-        <>
-          <section className="cart">
-            <div className="container">
-              <div className="cart__titles">
-                <h1 className="cart__titles__title">Корзина</h1>
-                <div className="cart__titles__count">{carts?.length}</div>
-                <button
-                  className="cart__titles__btn"
-                  onClick={() => dispatch(deleteAllCart())}
-                >
-                  <RiDeleteBin6Line />
-                </button>
-              </div>
-              <div className="cart__cards">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Фото</th>
-                      <th>Товары</th>
-                      <th>Описание</th>
-                      <th>Артикул</th>
-                      <th>Количество</th>
-                    </tr>
-                  </thead>
-                  <tbody>{cartItems}</tbody>
-                </table>
-              </div>
-            </div>
-          </section>
-        </>
-      ) : (
-        <CartNotFound />
-      )}
+      <section className="cart">
+        <div className="container">
+          <div className="cart__titles">
+            <h1 className="cart__titles__title">Корзина</h1>
+            <div className="cart__titles__count">{carts?.length}</div>
+            <button
+              className="cart__titles__btn"
+              onClick={() => dispatch(deleteAllCart())}
+            >
+              <RiDeleteBin6Line />
+            </button>
+          </div>
+          <div className="cart__cards">
+            <table>
+              <thead>
+                <tr>
+                  <th>Фото</th>
+                  <th>Товары</th>
+                  <th>Описание</th>
+                  <th>Артикул</th>
+                  <th>Количество</th>
+                </tr>
+              </thead>
+              <tbody>{cartItems}</tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

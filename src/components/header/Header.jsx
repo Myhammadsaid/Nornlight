@@ -101,7 +101,7 @@ const Header = () => {
                 8 (800) 890-46-56
               </a>
               <a
-                onClick={() => setModulToggle(!phonetoggle)}
+                onClick={() => setModulToggle(!modulToggle)}
                 href="#"
                 className="header__top__item tell"
               >

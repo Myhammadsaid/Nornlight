@@ -1,9 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const CompanyInfo = () => {
   return (
     <div>
-      <section className="company">
+      <motion.section
+        initial={{ opacity: 0, translateX: -100, translateY: -100 }}
+        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="company"
+      >
         <div className="container">
           <div className="company__style">
             <div className="company__content1">
@@ -57,7 +63,7 @@ const CompanyInfo = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 };

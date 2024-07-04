@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { useDetailProductQuery } from "../../context/api/productApi";
-import singleImg from "../../assets/single__img.png";
-import { useParams } from "react-router-dom";
-import { FiHeart } from "react-icons/fi";
 import SingleSkeleton from "../single-skeleton/SingleSkeleton";
 import { addToCart } from "../../context/slices/cartSlice";
 import { toggleHeart } from "../../context/slices/wishlistSlice";
-import { FaCheck } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
+import singleImg from "../../assets/single__img.png";
+import { useParams } from "react-router-dom";
+import { FiHeart } from "react-icons/fi";
+import { FaCheck } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Single = () => {
   let { id } = useParams();
@@ -22,7 +23,12 @@ const Single = () => {
       {isLoading ? (
         <SingleSkeleton />
       ) : (
-        <section className="single">
+        <motion.section
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="single"
+        >
           <div className="container">
             <div className="single__style">
               <img
@@ -97,7 +103,7 @@ const Single = () => {
               </div>
             </div>
           </div>
-        </section>
+        </motion.section>
       )}
     </div>
   );
