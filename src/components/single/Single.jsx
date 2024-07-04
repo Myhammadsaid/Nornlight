@@ -18,6 +18,8 @@ const Single = () => {
   let { data, isLoading } = useDetailProductQuery(id);
   const [count, setCount] = useState(1);
 
+  let check = carts?.some((el) => el.id === data?.id);
+
   return (
     <div>
       {isLoading ? (
@@ -57,30 +59,34 @@ const Single = () => {
                   гоночных хардтейлов для кросс-кантри.
                 </p>
                 <div className="single__content__box">
-                  <div className="single__content__btns">
-                    <button
-                      disabled={count === 1}
-                      onClick={() => setCount((p) => p - 1)}
-                      className="single__content__btns__btn"
-                    >
-                      -
-                    </button>
-                    <button className="single__content__btns__btn">
-                      {count}
-                    </button>
-                    <button
-                      disabled={count > 9}
-                      onClick={() => setCount((p) => p + 1)}
-                      className="single__content__btns__btn"
-                    >
-                      +
-                    </button>
-                  </div>
+                  {check ? (
+                    <div className="single__content__btns">
+                      <button
+                        disabled={count === 1}
+                        onClick={() => setCount((p) => p - 1)}
+                        className="single__content__btns__btn"
+                      >
+                        -
+                      </button>
+                      <button className="single__content__btns__btn">
+                        {count}
+                      </button>
+                      <button
+                        disabled={count > 9}
+                        onClick={() => setCount((p) => p + 1)}
+                        className="single__content__btns__btn"
+                      >
+                        +
+                      </button>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
                   <button
                     onClick={() => disptach(addToCart(data))}
                     className="single__content__btns__cart"
                   >
-                    {carts?.some((el) => el.id === data?.id) ? (
+                    {check ? (
                       <>
                         В корзину
                         <FaCheck />
