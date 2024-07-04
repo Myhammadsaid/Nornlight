@@ -246,7 +246,7 @@ const Katalog = ({ isMarriadeCard }) => {
                   </ul>
                   <img src={katalogImg9} alt="katalogImg1" />
                 </SwiperSlide>
-                <SwiperSlide className="katalog__card katalog__width">
+                <SwiperSlide className="katalog__card">
                   <ul className="katalog__card__content">
                     <li className="katalog__card__content__text">
                       Уличные светильники
@@ -257,7 +257,7 @@ const Katalog = ({ isMarriadeCard }) => {
                   </ul>
                   <img src={katalogImg10} alt="katalogImg1" />
                 </SwiperSlide>
-                <SwiperSlide className="katalog__card katalog__width">
+                <SwiperSlide className="katalog__card">
                   <ul className="katalog__card__content">
                     <li className="katalog__card__content__text">
                       Технические светильники

@@ -8,12 +8,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../context/slices/cartSlice";
 import { toggleHeart } from "../../context/slices/wishlistSlice";
 import { useGetCategoryQuery } from "../../context/api/categoryApi";
-// import Model from "../model/Model";
+import Model from "../model/Model";
 
 const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
   const wishlist = useSelector((state) => state?.wishlist?.value);
   const carts = useSelector((state) => state.cart.value);
-  const [toggle, setToggle] = useState(false);
+  const [modulToggle, setModulToggle] = useState(null);
   const dispatch = useDispatch();
   let navigate = useNavigate();
 
@@ -32,7 +32,7 @@ const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
   let productItems = filteredData?.map((el) => (
     <div key={el.id} className="product__card">
       <img
-        onClick={() => setToggle(!toggle)}
+        onClick={() => setModulToggle(el)}
         src={el.url[0]}
         alt="productImg"
       />
@@ -133,6 +133,22 @@ const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
         {/* <div className="product__modul"><img src={} alt="" /></div> */}
         {/* </Model> */}
       </section>
+      {modulToggle ? (
+        <Model setModulToggle={setModulToggle}>
+          <div className="product__modul">
+            <img src={modulToggle?.url[0]} alt={modulToggle?.title} />
+            <h1 className="product__modul__title">{modulToggle?.title}</h1>
+            <button
+              onClick={() => navigate(`/products/${modulToggle?.id}`)}
+              className="product__modul__btn"
+            >
+              See More
+            </button>
+          </div>
+        </Model>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

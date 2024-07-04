@@ -5,7 +5,6 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    // cursor: grab;
     gap: 20px;
     .katalog__card {
       width: 420px !important;
@@ -16,6 +15,7 @@
       border-radius: 20px;
       padding: 32px;
       gap: 50px;
+      flex: 1;
       &__content {
         display: grid;
         grid-template-columns: auto;
@@ -48,9 +48,6 @@
         width: 200px;
         height: 160px;
       }
-    }
-    .katalog__width {
-      flex: 1;
     }
   }
 }
