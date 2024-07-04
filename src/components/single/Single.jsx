@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDetailProductQuery } from "../../context/api/productApi";
 import singleImg from "../../assets/single__img.png";
 import { useParams } from "react-router-dom";
@@ -15,6 +15,7 @@ const Single = () => {
   const carts = useSelector((state) => state.cart.value);
   const wishlist = useSelector((state) => state.wishlist.value);
   let { data, isLoading } = useDetailProductQuery(id);
+  const [count, setCount] = useState(1);
 
   return (
     <div>
@@ -51,9 +52,23 @@ const Single = () => {
                 </p>
                 <div className="single__content__box">
                   <div className="single__content__btns">
-                    <button className="single__content__btns__btn">-</button>
-                    <button className="single__content__btns__btn">1</button>
-                    <button className="single__content__btns__btn">+</button>
+                    <button
+                      disabled={count === 1}
+                      onClick={() => setCount((p) => p - 1)}
+                      className="single__content__btns__btn"
+                    >
+                      -
+                    </button>
+                    <button className="single__content__btns__btn">
+                      {count}
+                    </button>
+                    <button
+                      disabled={count > 9}
+                      onClick={() => setCount((p) => p + 1)}
+                      className="single__content__btns__btn"
+                    >
+                      +
+                    </button>
                   </div>
                   <button
                     onClick={() => disptach(addToCart(data))}

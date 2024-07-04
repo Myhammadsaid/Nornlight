@@ -14,8 +14,6 @@ const ProductCart = () => {
   const carts = useSelector((state) => state?.cart?.value);
   let dispatch = useDispatch();
 
-  let totalPrice = carts?.reduce((sum, el) => sum + el.price * el.quantity, 0);
-
   let cartItems = carts?.map((el) => (
     <tr key={el.id} className="cart__card">
       <td className="cart__card__content">
