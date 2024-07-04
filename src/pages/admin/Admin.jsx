@@ -7,7 +7,7 @@ const Admin = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div style={{ display: "flex" }}>
+    <div className="container" style={{ display: "flex" }}>
       <AdminPanel />
       <div style={{ marginTop: "-190px", marginLeft: "400px" }}>
         <Outlet />

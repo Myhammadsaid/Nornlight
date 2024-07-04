@@ -1,6 +1,7 @@
 import React from "react";
 import { useCreateCategoryMutation } from "../../context/api/categoryApi";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
+import { toast } from "react-toastify";
 
 let initialState = {
   title: "",
@@ -13,10 +14,9 @@ const CreateCategory = () => {
 
   const handleCreate = (e) => {
     e.preventDefault();
-    let form = new FormData();
-    form.append("title", formData.title);
-    CreateCategory(form);
+    CreateCategory(formData);
     setFormData(initialState);
+    toast.success("Category Created");
   };
 
   return (

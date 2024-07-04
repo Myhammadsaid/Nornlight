@@ -77,9 +77,10 @@ const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
   let categoryItems = categories?.map((el) => (
     <li
       className={`category__item ${categoryValue === el.title ? "click" : ""}`}
+      onClick={() => setCategoryValue(el.title)}
       key={el.id}
     >
-      <span onClick={() => setCategoryValue(el.title)}>{el.title}</span>
+      <span>{el.title}</span>
     </li>
   ));
 
@@ -104,9 +105,10 @@ const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
                 className={`category__item ${
                   categoryValue === "all" ? "click" : ""
                 }`}
+                onClick={() => setCategoryValue("all")}
                 value={"all"}
               >
-                <span onClick={() => setCategoryValue("all")}>All</span>
+                <span>All</span>
               </li>
               {categoryItems}
             </ul>

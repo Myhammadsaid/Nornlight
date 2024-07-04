@@ -1,6 +1,7 @@
 import React from "react";
 import { BiEditAlt } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import Swal from "sweetalert2";
 import {
   useGetProductsQuery,
   useDeleteProductMutation,
@@ -13,7 +14,25 @@ const ManageProduct = () => {
   // const [] = useUpdateProductMutation();
 
   const handleDeleteProduct = (id) => {
-    deleteProduct(id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: `Do you want to remove ${id} from the cart?`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, remove it!",
+      cancelButtonText: "Cancel",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteProduct(id);
+        Swal.fire(
+          "Deleted!",
+          `${id} has been removed from the cart.`,
+          "success"
+        );
+      }
+    });
   };
 
   let productItems = data?.map((el) => (

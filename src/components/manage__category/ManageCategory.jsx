@@ -9,8 +9,8 @@ import {
 
 const ManageCategory = () => {
   const { data: categories } = useGetCategoryQuery();
-  const [DeleteCategory] = useDeleteCategoryMutation();
-  const [] = useUpdateCategoryMutation();
+  const [DeleteCategory, { isSuccess }] = useDeleteCategoryMutation();
+  // const [] = useUpdateCategoryMutation();
 
   const handleDeleteCategory = (id) => {
     DeleteCategory(id);

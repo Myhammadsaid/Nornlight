@@ -8,7 +8,7 @@ import Brand from "../../components/brand/Brand";
 import Blog from "../../components/blog/Blog";
 
 const Home = () => {
-  let { data, isLoading } = useGetProductsQuery({ page: 1, limit: 8 });
+  let { data, isLoading } = useGetProductsQuery();
 
   return (
     <div>

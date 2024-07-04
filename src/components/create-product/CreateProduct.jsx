@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
+import { useGetCategoryQuery } from "../../context/api/categoryApi";
 import { useCreateProductMutation } from "../../context/api/productApi";
+import { toast } from "react-toastify";
 
 let initialState = {
   title: "",
@@ -12,27 +14,29 @@ let initialState = {
 
 const CreateProduct = () => {
   const [CreateProduct, { isLoading }] = useCreateProductMutation();
+  const { data } = useGetCategoryQuery();
   const { handleChange, formData, setFormData } =
     useGetInputValue(initialState);
 
+  let categoryItems = data?.map((category) => (
+    <option key={category.id} value={category.title}>
+      {category.title}
+    </option>
+  ));
+
   const handleCreate = (e) => {
     e.preventDefault();
-    let form = new FormData();
-    form.append("title", formData.title);
-    form.append("price", formData.price);
-    form.append("images", formData.images);
-    form.append("category", formData.category);
-    form.append("desc", formData.desc);
-    CreateProduct(form);
     formData.price = +formData.price;
-    formData.images = formData.images.split("\n").filter((i) => i.trim());
+    formData.url = formData.url.split("\n").filter((i) => i.trim());
+    CreateProduct(formData);
     setFormData(initialState);
+    toast.success("Product Created");
   };
 
   return (
     <div>
       <form className="create__form" onSubmit={handleCreate}>
-        <h1 className="create__form__title">CreateProduct</h1>
+        <h1 className="create__form__title">Create Product</h1>
         <div className="create__form__inputs">
           <h3 className="create__form__inputs__text">Title</h3>
           <input
@@ -61,24 +65,20 @@ const CreateProduct = () => {
           <h3 className="create__form__inputs__text">Category</h3>
           <select
             className="create__form__inputs__select"
-            type="text"
             required
             onChange={handleChange}
             value={formData.category}
             name="category"
-            placeholder="Category"
           >
-            <option value="phone">phone</option>
-            <option value="conditioner">conditioner</option>
-            <option value="laptop">laptop</option>
-            <option value="TV">TV</option>
+            <option value="">Select Category</option>
+            {categoryItems}
           </select>
         </div>
         <div className="create__form__inputs">
           <h3 className="create__form__inputs__text">Description</h3>
           <textarea
             name="desc"
-            placeholder="Comment"
+            placeholder="Description"
             className="create__form__inputs__input"
             required
             onChange={handleChange}
@@ -86,7 +86,7 @@ const CreateProduct = () => {
           ></textarea>
         </div>
         <div className="create__form__inputs">
-          <h3 className="create__form__inputs__text">ImgUrl</h3>
+          <h3 className="create__form__inputs__text">Images</h3>
           <textarea
             name="url"
             placeholder="Images"
@@ -96,11 +96,12 @@ const CreateProduct = () => {
             value={formData.url}
           ></textarea>
         </div>
+
         <button
           className="create__form__btn"
-          disabled={isLoading ? "Creating..." : ""}
+          disabled={isLoading ? true : false}
         >
-          Create
+          {isLoading ? "Creating..." : "Create"}
         </button>
       </form>
     </div>
