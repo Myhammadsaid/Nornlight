@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BiEditAlt } from "react-icons/bi";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import Modul from "../../components/model/Model";
+import Model from "../../components/model/Model";
 import Swal from "sweetalert2";
 import {
   useGetProductsQuery,
@@ -90,7 +90,7 @@ const ManageProduct = () => {
         <h1 className="manage__title">Manage product</h1>
         <div className="manage__cards">{productItems}</div>
         {modulToggle ? (
-          <Modul data={modulToggle} setModulToggle={setModulToggle}>
+          <Model setModulToggle={setModulToggle}>
             <form onSubmit={handleUpdateProduct} className="manage__form">
               <h1 className="manage__form__title">Edit</h1>
               <div className="manage__form__content">
@@ -177,7 +177,7 @@ const ManageProduct = () => {
                 {isLoading ? "Saving..." : "Save"}
               </button>
             </form>
-          </Modul>
+          </Model>
         ) : (
           <></>
         )}

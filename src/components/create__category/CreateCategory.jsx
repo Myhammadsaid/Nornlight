@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useCreateCategoryMutation } from "../../context/api/categoryApi";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
 import { toast } from "react-toastify";
@@ -8,16 +8,22 @@ let initialState = {
 };
 
 const CreateCategory = () => {
-  const [CreateCategory, { isLoading }] = useCreateCategoryMutation();
+  const [CreateCategory, { isLoading, isSuccess }] =
+    useCreateCategoryMutation();
   const { formData, setFormData, handleChange } =
     useGetInputValue(initialState);
 
   const handleCreate = (e) => {
     e.preventDefault();
     CreateCategory(formData);
-    setFormData(initialState);
-    toast.success("Category Created");
   };
+
+  useEffect(() => {
+    if (isSuccess) {
+      setFormData(initialState);
+      toast.success("Category Created");
+    }
+  }, [isSuccess]);
 
   return (
     <div>
@@ -34,7 +40,7 @@ const CreateCategory = () => {
           className="create__category__btn"
           disabled={isLoading ? "Creating..." : ""}
         >
-          Create
+          {isLoading ? "Creating..." : "Create"}
         </button>
       </form>
     </div>
