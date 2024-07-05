@@ -16,7 +16,7 @@ const AdminPanel = () => {
         <div className="container">
           <div className="admin__style">
             <div className="admin__panel">
-              <h1 className="admin__panel__title">
+              <h1 onClick={() => navigate("/")} className="admin__panel__title">
                 <GoArrowLeft />
                 Admin Dashboard
               </h1>

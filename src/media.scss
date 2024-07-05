@@ -117,6 +117,18 @@
     color: #000 !important;
     border: none !important;
   }
+  .login__style {
+    justify-content: center !important;
+    height: 100vh !important;
+    img {
+      display: none;
+    }
+    .login__content {
+      &__title {
+        display: block !important;
+      }
+    }
+  }
 }
 
 @media (max-width: 950px) {

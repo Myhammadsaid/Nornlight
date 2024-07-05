@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import loginImg from "../../assets/login__img.png";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
-import { IoIosArrowRoundForward } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setToken } from "../../context/slices/authSlice";
@@ -24,13 +23,12 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(formData);
     setFormData(initialState);
     if (formData.username === "john32" && formData.password === "87654321") {
       dispatch(setToken("fake-token"));
       navigate("/admin");
     } else {
-      console.log("User Name or Password is incorrect");
+      alert("User Name or Password is incorrect");
     }
   };
 
@@ -41,6 +39,7 @@ const Login = () => {
           <div className="login__style">
             <img src={loginImg} alt="loginImg" />
             <form onSubmit={handleLogin} className="login__content">
+              <h1 className="login__content__title">Login</h1>
               <input
                 type="text"
                 value={formData.username}
