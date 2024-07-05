@@ -136,7 +136,11 @@ const Product = ({ isMarriade, data, isLoading, justifyContent }) => {
       {modulToggle ? (
         <Model setModulToggle={setModulToggle}>
           <div className="product__modul">
-            <img src={modulToggle?.url[0]} alt={modulToggle?.title} />
+            <img
+              className="product__modul__img"
+              src={modulToggle?.url[0]}
+              alt={modulToggle?.title}
+            />
             <h1 className="product__modul__title">{modulToggle?.title}</h1>
             <button
               onClick={() => navigate(`/products/${modulToggle?.id}`)}

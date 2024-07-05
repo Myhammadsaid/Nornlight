@@ -244,6 +244,12 @@
       font-size: 16px !important;
     }
   }
+  .product__modul__img {
+    height: 100% !important;
+  }
+  .product__modul__title {
+    font-size: 20px !important;
+  }
 }
 
 @media (max-width: 510px) {
@@ -319,6 +325,15 @@
     }
     &__content__inputs2 {
       max-width: 300px !important;
+      width: 100% !important;
+    }
+  }
+  .product__modul__img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+  .cart__message__content__inputs {
+    input {
       width: 100% !important;
     }
   }
