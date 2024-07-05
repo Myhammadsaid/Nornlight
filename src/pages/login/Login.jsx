@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import loginImg from "../../assets/login__img.png";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setToken } from "../../context/slices/authSlice";
 
@@ -16,6 +16,14 @@ const Login = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  let isLogin = useSelector((state) => state.auth.token);
+
+  useEffect(() => {
+    if (isLogin == "fake-token") {
+      navigate("/admin");
+    }
   }, []);
 
   const { formData, handleChange, setFormData } =
