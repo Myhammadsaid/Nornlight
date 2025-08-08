@@ -1,17 +1,15 @@
-import React, { useEffect } from "react";
-import Single from "../../components/single/Single";
-import SingleInfo from "../../components/singleInfo/SingleInfo";
+import { useEffect } from 'react'
+import Single from '../../components/single/Single'
 
 const SingleRoute = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  return (
-    <div>
-      <Single />
-      <SingleInfo />
-    </div>
-  );
-};
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
+	return (
+		<>
+			<Single />
+		</>
+	)
+}
 
-export default SingleRoute;
+export default SingleRoute

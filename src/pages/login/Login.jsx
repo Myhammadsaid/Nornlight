@@ -1,76 +1,72 @@
-import React, { useEffect } from "react";
-import loginImg from "../../assets/login__img.png";
-import { useGetInputValue } from "../../hooks/useGetInputValue";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { setToken } from "../../context/slices/authSlice";
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { setToken } from '../../context/slices/authSlice'
+import { useGetInputValue } from '../../hooks/useGetInputValue'
 
 const initialState = {
-  username: "",
-  password: "",
-};
+	username: '',
+	password: '',
+}
 
 const Login = () => {
-  let dispatch = useDispatch();
-  let navigate = useNavigate();
+	let dispatch = useDispatch()
+	let navigate = useNavigate()
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 
-  let isLogin = useSelector((state) => state.auth.token);
+	let isLogin = useSelector(state => state.auth.token)
 
-  useEffect(() => {
-    if (isLogin == "fake-token") {
-      navigate("/admin");
-    }
-  }, []);
+	useEffect(() => {
+		if (isLogin == 'fake-token') {
+			navigate('/admin')
+		}
+	}, [])
 
-  const { formData, handleChange, setFormData } =
-    useGetInputValue(initialState);
+	const { formData, handleChange, setFormData } = useGetInputValue(initialState)
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    setFormData(initialState);
-    if (formData.username === "john32" && formData.password === "87654321") {
-      dispatch(setToken("fake-token"));
-      navigate("/admin");
-    } else {
-      alert("User Name or Password is incorrect");
-    }
-  };
+	const handleLogin = e => {
+		e.preventDefault()
+		setFormData(initialState)
+		if (formData.username === 'john32' && formData.password === '87654321') {
+			dispatch(setToken('fake-token'))
+			navigate('/admin')
+		} else {
+			alert('User Name or Password is incorrect')
+		}
+	}
 
-  return (
-    <div>
-      <section className="login">
-        <div className="container">
-          <div className="login__style">
-            <img src={loginImg} alt="loginImg" />
-            <form onSubmit={handleLogin} className="login__content">
-              <h1 className="login__content__title">Login</h1>
-              <input
-                type="text"
-                value={formData.username}
-                onChange={handleChange}
-                placeholder="Username"
-                className="login__content__input"
-                name="username"
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                value={formData.password}
-                onChange={handleChange}
-                className="login__content__input"
-                name="password"
-              />
-              <button>Login</button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
+	return (
+		<section className='login'>
+			<div className='container'>
+				<div className='login__style'>
+					<img src={'/images/login__img.png'} alt='loginImg' />
+					<form onSubmit={handleLogin} className='login__content'>
+						<h1 className='login__content__title'>Login</h1>
+						<input
+							type='text'
+							value={formData.username}
+							onChange={handleChange}
+							placeholder='Username'
+							className='login__content__input'
+							name='username'
+						/>
+						<input
+							type='password'
+							placeholder='Password'
+							value={formData.password}
+							onChange={handleChange}
+							className='login__content__input'
+							name='password'
+						/>
+						<button>Login</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	)
+}
 
-export default Login;
+export default Login
