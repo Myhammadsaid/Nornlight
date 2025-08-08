@@ -97,6 +97,9 @@ const Footer = () => {
 						</li>
 					</ul>
 				</div>
+				<h4 className='footer-creater-site'>
+					Разработчик сайта sayt-yaratiw.uz
+				</h4>
 			</div>
 		</footer>
 	)
