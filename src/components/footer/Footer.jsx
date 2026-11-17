@@ -97,9 +97,9 @@ const Footer = () => {
 						</li>
 					</ul>
 				</div>
-				<h4 className='footer-creater-site'>
-					Разработчик сайта webtik.uz
-				</h4>
+				<a style={{ color: 'black' }} href='https://webtik.uz/'>
+					Developed by WEBTIK
+				</a>
 			</div>
 		</footer>
 	)
